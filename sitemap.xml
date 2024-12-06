@@ -4,7 +4,16 @@
   <url>
     <loc>http://example.com/dog/index.html</loc>
     
-    <lastmod>2024-11-30</lastmod>
+    <lastmod>2024-12-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/%E7%AC%94%E8%AE%B0%EF%BC%9F=9176290/index.html</loc>
+    
+    <lastmod>2024-12-06</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
