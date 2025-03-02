@@ -52,11 +52,11 @@ const util = {
   },
 
   scrollTop: () => {
-    window.scrollTo({top: 0});
+    window.scrollTo({top: 0, behavior: "smooth"});
   },
 
   scrollComment: () => {
-    document.getElementById('comments').scrollIntoView();
+    document.getElementById('comments').scrollIntoView({behavior: "smooth"});
   },
 
   viewportLazyload: (target, func, enabled = true) => {

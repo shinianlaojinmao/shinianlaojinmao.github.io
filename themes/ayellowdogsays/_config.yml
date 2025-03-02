@@ -29,31 +29,30 @@ logo:
 menubar:
   columns: 4 # 一行多少个
   items: # 可按照自己需求增加，符合以下格式即可
-    # id: 页面中高亮的 menu_id 
-    # theme: 高亮时的颜色，仅 svg 中 fill="currentColor" 时有效
-    # icon: 支持 svg/img 标签，可以定义在 icons.yml 文件中，也支持外部图片的 URL
-    # title: 标题
-    # url: 点击跳转到哪，支持相对路径和绝对路径
-    # - id: post
-    #   theme: '#1BCDFC'
-    #   icon: solar:documents-bold-duotone
-    #   title: 博客
-    #   url: /
-    # - id: wiki
-    #   theme: '#3DC550'
-    #   icon: solar:notebook-bookmark-bold-duotone
-    #   title: 文档
-    #   url: /wiki/
-    # - id: explore
-    #   theme: '#FA6400'
-    #   icon: solar:planet-bold-duotone
-    #   title: 探索
-    #   url: /explore/
-    # - id: social
-    #   theme: '#F44336'
-    #   icon: solar:chat-square-like-bold-duotone
-    #   title: 社交
-    #   url: /friends/
+      - id: post
+        theme: '#1BCDFC'
+        icon: solar:documents-bold-duotone
+        title: 博客
+      - id: post
+        theme: '#1BCDFC'
+        icon: solar:documents-bold-duotone
+        title: 博客
+        url: /
+      - id: wiki
+        theme: '#3DC550'
+        icon: solar:notebook-bookmark-bold-duotone
+        title: 文档
+        url: /tags/
+      - id: explore
+        theme: '#FA6400'
+        icon: solar:planet-bold-duotone
+        title: 探索
+        url: /news/
+      - id: social
+        theme: '#F44336'
+        icon: solar:chat-square-like-bold-duotone
+        title: 社交
+        url: /friends/
 
 
 ######## Main ########
@@ -185,9 +184,6 @@ article:
   license: '本文采用 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
   # 分享
   share: # [wechat, weibo, email, link]
-  # 字数统计，需要安装插件 hexo-word-counter，具体配置位于Hexo配置中
-  wordcount:
-    enable: true
   # 相关文章，需要安装插件 (for layout: post)
   # npm i hexo-related-popular-posts
   related_posts:
@@ -205,147 +201,55 @@ search:
     appId: 
     apiKey: 
     indexName: 
-    js: https://jsd.onmicrosoft.cn/algoliasearch/3/algoliasearch.min.js
+    js: https://gcore.jsdelivr.net/algoliasearch/3/algoliasearch.min.js
 
 
 ######## Comments ########
 comments:
-  service: # beaudar, utterances, giscus, twikoo, waline, artalk
-  comment_title: 快来参与讨论吧~
+  service: twikoo
+  comment_title: 来即是客，坐坐坐坐沙发~
   lazyload: false # true / false
-  # beaudar
-  # https://beaudar.lipk.org/
-  beaudar:
-    repo: xxx/xxx
-    issue-term: pathname
-    issue-number:
-    theme: preferred-color-scheme
-    label:
-    input-position: top # top/bottom 评论框位置
-    comment-order: desc # desc 排序
-    keep-theme: # true/false
-    loading: false
-    branch: main
-  # utterances
-  # https://utteranc.es/
-  utterances:
-    repo: xxx/xxx
-    issue-term: pathname
-    issue-number:
-    theme: preferred-color-scheme
-    label:
-  # giscus
-  # https://giscus.app/zh-CN
-  giscus:
-    src: https://giscus.app/client.js
-    data-repo: xxx/xxx # [在此输入仓库]
-    data-repo-id: # [在此输入仓库 ID]
-    data-category: # [在此输入分类名]
-    data-category-id:
-    data-mapping: pathname
-    data-strict: 0
-    data-reactions-enabled: 1
-    data-emit-metadata: 0
-    data-input-position: top # top, bottom
-    data-theme: preferred_color_scheme
-    data-lang: zh-CN
-    data-loading: # lazy
-    crossorigin: anonymous
 
   # Twikoo
   # https://twikoo.js.org/
   twikoo:
     js: https://gcore.jsdelivr.net/npm/twikoo@1.6.8/dist/twikoo.all.min.js # 建议锁定版本
-    envId: https://xxx # vercel函数
+    envId: https://talk.laogoupro.us.kg # vercel函数
 
-  # Waline
-  # https://waline.js.org/
-  waline:
-    js: https://gcore.jsdelivr.net/npm/@waline/client@3.1.3/dist/waline.js
-    css: https://gcore.jsdelivr.net/npm/@waline/client@3.1.3/dist/waline.css
-    meta_css: https://gcore.jsdelivr.net/npm/@waline/client@3.1.3/dist/waline-meta.css
-    # Waline server address url, you should set this to your own link
-    serverURL: https://waline.vercel.app
-    # If false, comment count will only be displayed in post page, not in home page
-    commentCount: true
-    # Pageviews count, Note: You should not enable both `waline.pageview` and `leancloud_visitors`.
-    pageview: false
-    # Custom emoji
-    # emoji:
-    #   - https://unpkg.com/@waline/emojis@1.1.0/weibo
-    #   - https://unpkg.com/@waline/emojis@1.1.0/alus
-    #   - https://unpkg.com/@waline/emojis@1.1.0/bilibili
-    #   - https://unpkg.com/@waline/emojis@1.1.0/qq
-    #   - https://unpkg.com/@waline/emojis@1.1.0/tieba
-    #   - https://unpkg.com/@waline/emojis@1.1.0/tw-emoji
-    #   - https://unpkg.com/@waline/emojis@1.1.0/bmoji
-    # 设置自己的图床服务，替换默认的 Base 64 编码嵌入（有体积大小限制），在评论中上传图片更加方便
-    # imageUploader:
-      # 适配了兰空图床V1、V2版本
-      # 以兰空图床V1为例，下列填写内容为：
-      # fileName: file
-      # tokenName: Authorization
-      # api: https://xxxxxx/api/v1/upload
-      # token: Bearer xxxxxxxxxxxxxx
-      # resp: data.links.url
-      # 以兰空图床V2为例，下列填写内容为：
-      # fileName: image
-      # tokenName: token
-      # api: https://xxxxxx/api/upload
-      # token: xxxxxxxxxxxxxx
-      # resp: data.url
-    #   fileName: # 根据版本二选一
-    #   tokenName: # 根据版本二选一
-    #   api: # 图床 api 地址
-    #   token: # 图床验证
-    #   resp: # 图片地址返回值的字段
-
-  # Artalk
-  # https://artalk.js.org/
-  artalk:
-    css: https://unpkg.com/artalk@2.8.5/dist/Artalk.css
-    js: https://unpkg.com/artalk@2.8.5/dist/Artalk.js
-    server: # 后端服务地址
-    placeholder: ''
-    darkMode: auto
 
 
 ######## Footer ########
 footer:
   social:
-    # github:
-    #   icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/>'
-    #   url: /
-    # music:
-    #   icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/3845874.svg"/>'
-    #   url: /
-    # unsplash:
-    #   icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/3616429.svg"/>'
-    #   url: /
-    # comments:
-    #   icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/942ebbf1a4b91.svg"/>'
-    #   url: /about/#comments
-    # theme:
-    #   icon: default:theme
-    #   onclick: 'switchTheme()'
+      github:
+        icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/>'
+        url: /
+      music:
+        icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/3845874.svg"/>'
+        url: /news/
+      unsplash:
+        icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/3616429.svg"/>'
+        url: /air-/
+      comments:
+        icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/942ebbf1a4b91.svg"/>'
+        url: /about123/#comments
+      theme:
+        icon: default:theme
+        onclick: 'switchTheme()'
   sitemap:
-    # '博客':
-    #   - '[近期](/)'
-    #   - '[分类](/)'
-    #   - '[标签](/)'
-    #   - '[归档](/)'
-    # '项目':
-    #   - '[开源库](/)'
-    # '社交':
-    #   - '[友链](/)'
-    #   - '[留言板](/)'
-    # '更多':
-    #   - '[关于本站](/)'
-    #   - '[GitHub](/)'
+      '博客':
+        - '[近期](/)'
+        - '[分类](/tags/)'
+        - '[标签](/air-/)'
+      '社交':
+        - '[友链](/friends/)'
+      '更多':
+        - '[关于本站](/about/)'
+        - '[GitHub](https://github.com/)'
   content: | # 支持 Markdown 格式
     本站由 [{author.name}](/) 使用 [{theme.name} {theme.version}]({theme.tree}) 主题创建。
     本博客所有文章除特别声明外，均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。
-  # 主题用户越多，开发者维护和更新的积极性就越高，如果您喜欢本主题，请在适当的位置显示主题信息和仓库链接以表支持。
+    主题用户越多，开发者维护和更新的积极性就越高，如果您喜欢本主题，请在适当的位置显示主题信息和仓库链接以表支持。
 
 
 ######## Tag Plugins ########
@@ -383,23 +287,12 @@ tag_plugins:
   # {% image %}
   image:
     fancybox: false # true, false
-  # {% live %}
-  live:
-    effect: live # live/loop/exposure/bounce
-    preload: true # 是否在用户开始播放之前下载
-    style: full # full/hint/loop
   # {% copy xxx %}
   copy:
     toast: 复制成功
-  # {% coding %}
-  coding:
-    api:
   # {% timeline %}
   timeline:
     max-height: 80vh
-  # {% span %}
-  span:
-    default_color: orange # red, orange, yellow, green, cyan, blue, purple
   # {% mark %}
   mark:
     default_color: yellow # light, dark, red, orange, yellow, green, cyan, blue, purple, warning, error
@@ -453,8 +346,6 @@ data_services:
     api: 
   ghinfo:
     js: /js/services/ghinfo.js
-  coding:
-    js: /js/services/coding.js
   # 网格布局类
   sites:
     js: /js/services/sites.js
@@ -478,11 +369,7 @@ data_services:
     js: /js/services/artalk_latest_comment.js
   giscus:
     js: /js/services/giscus_latest_comment.js
-  # 其他类
-  webinfo:
-    js: /js/services/webinfo.js
-  live:
-    js: https://cdn.apple-livephotoskit.com/lpk/1/livephotoskit.js
+
 
 # 扩展插件接入方法：(插件名下面用 #plugin# 代替)
 # 1. 在这里增加 #plugin# 配置，至少赢含有 enable 字段，默认为空（不启用）
@@ -522,13 +409,13 @@ plugins:
   # swiper
   swiper:
     enable: true
-    homepage: #true
+    homepage: true # 增加该项
     css: https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css
     js: https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js
 
   # https://scrollrevealjs.org/api/reveal.html
   scrollreveal:
-    enable: #true
+    enable: true
     js: https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js
     distance: 16px
     duration: 800 # ms
@@ -540,7 +427,7 @@ plugins:
   tianli_gpt: 
     enable: #true
     js: https://jsd.onmicrosoft.cn/gh/qxchuckle/Post-Summary-AI@6.0/chuckle-post-ai.min.js
-    field: post # all, post, wiki, topic
+    field: post # all, post, wiki
     key: 5Q5mpqRK5DkwT1X9Gi5e # tianli_gpt key
     total_length: 1000 # 设置提交的字数限制，默认为1000字，上限为5000，超过5000字符将被截断
     typewriter: true # 打字机动画 
@@ -594,12 +481,6 @@ plugins:
     default_text: 'Copy'
     success_text: 'Copied'
     toast: 复制成功
-
-  expire: # 文章时效提醒
-    enable: #true
-    field: wiki # post, wiki, all 
-    color: orange # red, orange...
-    expiredDays: 45
   
   # 赫蹏 (Heti) - 专为中文网页内容设计的排版样式增强
   # https://github.com/sivan/heti
@@ -611,7 +492,7 @@ plugins:
 
 
 style:
-  prefers_theme: auto # auto / light / dark
+  prefers_theme: dark # auto / light / dark
   smooth_scroll: false # true / false 开启时如果目录过长可能无法准确定位
   font-size:
     root: 16px # 改这个会影响全局所有文字的字号
@@ -664,8 +545,8 @@ style:
     next: https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/arrow/064b95430caf4.svg
   error_page: https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/404/1c830bfcd517d.svg
   site:
-    background-image: #'url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.14/image/site-bg1@small.webp)' # 未完全适配，慎用
-    blur-px: 100px
+    background-image: 'url(https://file.moyublog.com/free_wallpapers_files/5j5v43f0sj1.jpg)' # 未完全适配，慎用
+    blur-px: 0px
     blur-bg: var(--alpha75)
 
 
@@ -683,3 +564,12 @@ api_host:
   ghapi: https://api.github.com
   ghraw: https://raw.githubusercontent.com
   gist: https://gist.github.com
+
+  
+# 自定义引入css,js
+inject:
+  head:
+    - <link rel="stylesheet" href="/customize/css/pace.css"> # 网站进度条加载
+  script:
+    - <script type="text/javascript" src="/customize/js/pace.min.js"></script> # 网站进度条加载
+    - <script type="text/javascript" src="https://www.flyalready.cn/js/effectsonclick.js"></script> # 网站进度条加载

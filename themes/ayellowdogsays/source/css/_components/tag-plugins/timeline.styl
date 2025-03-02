@@ -83,7 +83,6 @@
 .tag-plugin.timeline .body
   background: var(--card)
   border-radius: $border-card
-  border: 1px solid var(--block-border)
   border-top-left-radius: 2px
   padding: 0.5rem 1rem
   margin-top: 4px
@@ -102,13 +101,11 @@
 .tag-plugin.timeline[api]
   a.body
     display: block
-    color: var(--text-p2)
+    color: var(--text-p1)
     line-height: 1.25
     padding: 0.75rem 1rem
     --fsp: $fsp1
     font-size: var(--fsp)
-    &:hover
-      color: var(--text)
 
 
 .tag-plugin.timeline[api] .body
@@ -122,12 +119,13 @@
     a 
       color: inherit
       text-decoration: none
+      border-bottom: 2px solid $color-theme
       trans1 all
       background: none
       &:hover
         background: none
         border-radius: 0
-        color: $color-hover
+        border-bottom: 2px solid $color-hover
   >p:first-child:not([class]) a:not([class])
     padding: 0
     margin: 0

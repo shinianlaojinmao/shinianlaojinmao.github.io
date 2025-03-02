@@ -1,7 +1,7 @@
 .widgets 
   .loading-wrap
     margin: 0.5rem 0
-    background: var(--block)
+    background: var(--alpha50)
 
 .widgets
   overflow: scroll
@@ -44,7 +44,7 @@
           fill: var(--text-p2)
         &:hover
           color: $color-hover
-          background: var(--block)
+          background: var(--alpha100)
           opacity 1
           svg
             fill: $color-hover
@@ -73,10 +73,6 @@
     .widget-header
       padding-left: var(--gap-padding)
       padding-right: var(--gap-padding)
-      background: var(--site-bg)
-      position: sticky
-      z-index: 2
-      top: -1px
   // 小屏幕
   @media screen and (max-width: $device-laptop)
     .widget-wrapper
@@ -85,4 +81,4 @@
   // 大屏幕
   @media screen and (min-width: $device-laptop)
     .widget-wrapper.markdown .widget-body
-      background: var(--card)
+      background: var(--block)

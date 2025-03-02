@@ -1,7 +1,7 @@
 // 文本区域
 .md-text
   max-width: 100%
-  padding: 0 1rem
+  padding: 1rem
   color: var(--text-p1)
   line-height: 1.6
   word-break: break-word
@@ -30,6 +30,8 @@
     margin-left: 0.5em
   h1,h2,h3,h4,h5,h6
     text-align: center
+    >a:first-child
+      display: none
   h2
     margin: 2em 0 1.5em
   // 取消缩进效果
@@ -69,15 +71,29 @@
   h1,h2,h3,h4,h5,h6
     color: var(--text)
     line-height: 1.8
-    &:before
-      content: '#'
+    >a:first-child
+      background: $color-theme
+      border-radius: 2px
       margin-right: 8px
-      color: $color-theme
+      trans1 background
+      &:hover
+        background: $color-hover
+      &:before
+        content: ''
+        color: white
+        font-weight: 700
+        padding: 0 2px
+        font-size: $fs-12
+  h2
+    font-weight: 500
+    >a:first-child:before
+      content: ':'
+    
   blockquote, .tag-plugin
     h2,h3,h4,h5,h6
       margin-top: 0.25em
       margin-bottom: 0.25em
-  
+      
 .md-text.content:first-child .tag-plugin:first-child
   margin-top: 0
 
@@ -104,6 +120,7 @@
   margin: auto
   display: block
 
+li:not([class]) a:not([class])
 p:not([class]) a:not([class])
 table a:not([class])
   position: relative
@@ -112,7 +129,7 @@ table a:not([class])
   padding: 0 2px
   border-radius: 0
   color: inherit
-  border-bottom: 2px solid var(--theme-link)
+  background: linear-gradient(0deg,var(--theme-link),var(--theme-link)) no-repeat left 100%/100% 1px
   &:hover
     text-decoration: none
     color: var(--theme-link)
@@ -123,8 +140,3 @@ table a:not([class])
     padding: 0
     &:hover
       background: none
-
-// MathJax
-.MathJax_Display
-  overflow-x: auto
-  overflow-y: hidden
