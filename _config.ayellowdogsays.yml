@@ -102,8 +102,3 @@ style:
   codeblock:
     scrollbar: 4px
     highlightjs_theme: /vendor/css/atom-one-dark.min.css
-
-    - <script src="/vendor/js/lantern.js"></script>
-    - <script data-website-id="91357f39-3d88-42f3-bf11-e1c1206ac8ab" src="https://logsphere.codepzj.cn/js/track.js"></script>
-    - <script type="text/javascript" src="/customize/js/pace.min.js"></script> # 网站进度条加载
-    - <script type="text/javascript" src="https://www.flyalready.cn/js/effectsonclick.js"></script> # 网站进度条加载
