@@ -30,16 +30,13 @@ menubar:
   columns: 4 # 一行多少个
   items: # 可按照自己需求增加，符合以下格式即可
       - id: post
-        title: 博客
+        title: 阿黄
         url: /
-      - id: wiki
-        title: 文档
-        url: /tags/
       - id: explore
-        title: 探索
+        title: 新闻
         url: /news/
       - id: social
-        title: 社交
+        title: 
         url: /friends/
 
 
