@@ -79,7 +79,7 @@ style:
   leftbar:
     blur-px: 100px
     blur-bg: var(--alpha60)
-    background-image: url()
+    background-image: url(https://file.moyublog.com/free_wallpapers_files/5j5v43f0sj1.jpg)
   text-align: left # justify/left/center/right
   prefix:
     h2: https://api.iconify.design/ci:heading-h2.svg
