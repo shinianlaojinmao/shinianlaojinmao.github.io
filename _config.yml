@@ -120,25 +120,30 @@ issues:
   repo: shinianlaojinmao/dogs-home # 仓库持有者/仓库名（改成自己的）
   label: active # 筛选具有 active 标签的 issue ，取消此项则会提取所有 open 状态的 issue
   sort: # updated-desc # 排序，按最近更新，取消此项则按创建时间排序
-# live2d配置宠物
+# Live2D
+## https://github.com/EYHN/hexo-helper-live2d
 live2d:
   enable: true
-  scriptFrom: local
-  pluginRootPath: live2dw/
-  pluginJsPath: lib/
-  pluginModelPath: assets/
+  scriptFrom: local # 默认
+  pluginModelPath: assets/ # 模型文件相对与插件根目录路径
   model:
-#    use: live2d-widget-model-wanko
-    use: live2d-widget-model-wanko
+    use: live2d-widget-model-tororo # 模型名字
+    scale: 1
+    hHeadPos: 0.5
+    vHeadPos: 0.618
   display:
+    superSample: 2
+    width: 250  # 显示位置及大小 我设置的250*500
+    height: 500
     position: right
-    width: 240
-    height: 480
+    hOffset: 0
+    vOffset: -20
   mobile:
-    show: false
+    show: false  # 手机显示开关，建议关闭
+    scale: 0.5
   react:
-    opacityDefault: 1
-    opacityOnHover: 1
+    opacityDefault: 0.7
+    opacityOnHover: 0.2
 githubcalendar:
   enable: true
   enable_page: /  # 表示只在根目录(首页)显示
