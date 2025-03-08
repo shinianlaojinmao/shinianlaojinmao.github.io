@@ -14,27 +14,11 @@ swiper:
   swiper_js: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js #swiper js依赖
   custom_css: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css # 适配主题样式补丁
   custom_js: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js # swiper初始化方法
-
-# Inject the css and script (aplayer/meting)
-aplayerInject:
-  enable: true
-  per_page: true
-
 # Inject
 # Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   bottom:
-    - <meting-js class="no-destroy" id="8932390" server="netease" type="playlist" fixed="true" autoplay="true" order="random" volume="0.3" list-folded="false" list-max-height="36vh"> </meting-js>
     - <script src="https://www.vae.zhangweicheng.xyz/web/denglong.js?text=%E5%A5%BD%E5%A5%BD%E5%AD%A6%E4%B9%A0"></script>
-
-# CDN
-# Don't modify the following settings unless you know how they work
-# 非必要請不要修改
-CDN:
-  option:
-    aplayer_css: https://npm.elemecdn.com/aplayer/dist/APlayer.min.css
-    aplayer_js: https://npm.elemecdn.com/aplayer/dist/APlayer.min.js
-    meting_js: https://npm.elemecdn.com/meting/dist/Meting.min.js
 
 
