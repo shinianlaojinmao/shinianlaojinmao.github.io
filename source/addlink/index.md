@@ -34,4 +34,6 @@ title: 期待与您建立友好的互联网连接……
 - 法律优先：以上所有条件均需完全符合法律法规，如有任何冲突，以法律为准。详情可参考《中华人民共和国网络安全法》。
 
 - 如果您满足这些条件，并愿意与本站建立友链，请在评论区留下格式化信息。我期待与您建立友好的互联网连接！如果暂时不符合条件，我会通过邮件或留言通知您，并期待未来有机会交朋友！
-- 可评论区申请
+<div id="friends-api"></div>
+<script src="https://cdn.jsdelivr.net/gh/Fgaoxing/blog-cdn@main/source/js/friends-api.js"></script>
+<script>qexo_friend_api("friends-api","https://manage.laogoupro.us.kg");</script>
