@@ -35,3 +35,12 @@ CDN:
     aplayer_css: https://npm.elemecdn.com/aplayer/dist/APlayer.min.css
     aplayer_js: https://npm.elemecdn.com/aplayer/dist/APlayer.min.js
     meting_js: https://npm.elemecdn.com/meting/dist/Meting.min.js
+
+
+
+inject:
+  head: #注入自定义css
+    # - <link rel="stylesheet" href="/css/style.css?v1">
+    # - <link rel="stylesheet" href="/xxx.css">
+  bottom: #注入自定义js
+      - <script src="https://www.vae.zhangweicheng.xyz/web/denglong.js?text=%E5%A5%BD%E5%A5%BD%E5%AD%A6%E4%B9%A0"></script>
