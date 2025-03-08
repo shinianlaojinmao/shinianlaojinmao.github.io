@@ -28,6 +28,7 @@ menu:
     友链申请: /addlink/ || fa fa-at
   关于 || fa fa-list || hide:
     站长资料: /about/ ||  fa fa-address-card
+    说说: /shuoshuo/ ||  fa fa-address-card
   # 首页: / || fas fa-home
   # 列表||fas fa-list:
   #   音乐: /music/ || fas fa-music
