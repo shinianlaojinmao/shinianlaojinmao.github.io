@@ -26,6 +26,7 @@ aplayerInject:
 inject:
   bottom:
     - <meting-js class="no-destroy" id="8932390" server="netease" type="playlist" fixed="true" autoplay="true" order="random" volume="0.3" list-folded="false" list-max-height="36vh"> </meting-js>
+    - <script src="https://www.vae.zhangweicheng.xyz/web/denglong.js?text=%E5%A5%BD%E5%A5%BD%E5%AD%A6%E4%B9%A0"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
@@ -37,10 +38,3 @@ CDN:
     meting_js: https://npm.elemecdn.com/meting/dist/Meting.min.js
 
 
-
-inject:
-  head: #注入自定义css
-    # - <link rel="stylesheet" href="/css/style.css?v1">
-    # - <link rel="stylesheet" href="/xxx.css">
-  bottom: #注入自定义js
-      - <script src="https://www.vae.zhangweicheng.xyz/web/denglong.js?text=%E5%A5%BD%E5%A5%BD%E5%AD%A6%E4%B9%A0"></script>
